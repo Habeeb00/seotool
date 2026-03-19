@@ -1,7 +1,8 @@
 .footer {
-  background: var(--text-primary);
+  background: var(--bg-card);
   color: rgba(255, 255, 255, 0.6);
   padding: var(--space-2xl) var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer-inner {
@@ -18,7 +19,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  color: white;
+  color: var(--text-primary);
 }
 
 .footer-logo-icon {

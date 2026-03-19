@@ -87,11 +87,6 @@ export default function HeroSection() {
       <div className="hero-bg-orb hero-bg-orb-3"></div>
 
       <div className="hero-content">
-        <div className="hero-badge animate-fade-in-up">
-          <span className="badge-dot"></span>
-          Award Flight Checker
-        </div>
-
         <h1 className="hero-title animate-fade-in-up delay-1">
           Did You <span className="hero-title-highlight">Overpay</span><br />
           for This Flight?
@@ -102,150 +97,158 @@ export default function HeroSection() {
           average redemptions to tell you if you got a good deal — or if better options exist.
         </p>
 
-        <form className="search-card animate-scale-in delay-3" onSubmit={handleSubmit} id="search-form">
-          <div className="search-card-inner">
-            <div className="search-row">
-              {/* From */}
-              <div className="input-group" ref={fromRef}>
-                <label className="input-label">From</label>
-                <div className="input-wrapper">
-                  <svg className="input-icon" viewBox="0 0 24 24" fill="none">
-                    <path d="M2 12L6 8M6 8L10 12M6 8V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" transform="rotate(-45 12 12)"/>
-                  </svg>
-                  <input
-                    type="text"
-                    className="search-input"
-                    id="input-from"
-                    placeholder="e.g. NYC"
-                    value={from}
-                    onChange={(e) => handleFromChange(e.target.value)}
-                    onFocus={() => from && setShowFromDropdown(true)}
-                    maxLength={3}
-                    autoComplete="off"
-                  />
-                </div>
-                {showFromDropdown && fromSuggestions.length > 0 && (
-                  <div className="airport-dropdown" id="dropdown-from">
-                    {fromSuggestions.map(a => (
-                      <button key={a.code} className="dropdown-item" type="button" onClick={() => selectFrom(a)}>
-                        <span className="dropdown-code">{a.code}</span>
-                        <span className="dropdown-city">{a.city}</span>
-                        <span className="dropdown-country">{a.country}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Swap button */}
-              <button className="swap-btn" type="button" onClick={swapAirports} id="btn-swap" aria-label="Swap airports">
-                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
-                  <path d="M7 16L3 12M3 12L7 8M3 12H21M17 8L21 12M21 12L17 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <form className="search-bar animate-scale-in delay-3" onSubmit={handleSubmit} id="search-form">
+          <div className="search-bar-inner">
+            {/* From */}
+            <div className="input-group" ref={fromRef}>
+              <div className="input-wrapper">
+                <svg className="input-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 12L6 8M6 8L10 12M6 8V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" transform="rotate(-45 12 12)"/>
                 </svg>
-              </button>
-
-              {/* To */}
-              <div className="input-group" ref={toRef}>
-                <label className="input-label">To</label>
-                <div className="input-wrapper">
-                  <svg className="input-icon" viewBox="0 0 24 24" fill="none">
-                    <path d="M2 12L6 16M6 16L10 12M6 16V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" transform="rotate(45 12 12)"/>
-                  </svg>
-                  <input
-                    type="text"
-                    className="search-input"
-                    id="input-to"
-                    placeholder="e.g. LON"
-                    value={to}
-                    onChange={(e) => handleToChange(e.target.value)}
-                    onFocus={() => to && setShowToDropdown(true)}
-                    maxLength={3}
-                    autoComplete="off"
-                  />
-                </div>
-                {showToDropdown && toSuggestions.length > 0 && (
-                  <div className="airport-dropdown" id="dropdown-to">
-                    {toSuggestions.map(a => (
-                      <button key={a.code} className="dropdown-item" type="button" onClick={() => selectTo(a)}>
-                        <span className="dropdown-code">{a.code}</span>
-                        <span className="dropdown-city">{a.city}</span>
-                        <span className="dropdown-country">{a.country}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
+                <input
+                  type="text"
+                  className="search-input"
+                  id="input-from"
+                  placeholder="From (e.g. NYC)"
+                  value={from}
+                  onChange={(e) => handleFromChange(e.target.value)}
+                  onFocus={() => from && setShowFromDropdown(true)}
+                  maxLength={3}
+                  autoComplete="off"
+                />
               </div>
-            </div>
-
-            <div className="search-row-bottom">
-              {/* Cabin Class */}
-              <div className="input-group cabin-group">
-                <label className="input-label">Cabin Class</label>
-                <div className="cabin-pills" id="cabin-pills">
-                  {['economy', 'business', 'first'].map(c => (
-                    <button
-                      key={c}
-                      type="button"
-                      className={`cabin-pill ${cabin === c ? 'active' : ''}`}
-                      onClick={() => setCabin(c)}
-                    >
-                      {c.charAt(0).toUpperCase() + c.slice(1)}
+              {showFromDropdown && fromSuggestions.length > 0 && (
+                <div className="airport-dropdown inline-dropdown" id="dropdown-from">
+                  {fromSuggestions.map(a => (
+                    <button key={a.code} className="dropdown-item" type="button" onClick={() => selectFrom(a)}>
+                      <span className="dropdown-code">{a.code}</span>
+                      <span className="dropdown-city">{a.city}</span>
                     </button>
                   ))}
                 </div>
-              </div>
-
-              {/* Points Used */}
-              <div className="input-group points-group">
-                <label className="input-label">Points / Miles Used</label>
-                <div className="input-wrapper">
-                  <svg className="input-icon" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M12 7V12L15 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                  <input
-                    type="text"
-                    className="search-input"
-                    id="input-points"
-                    placeholder="e.g. 60,000"
-                    value={points}
-                    onChange={(e) => handlePointsChange(e.target.value)}
-                    autoComplete="off"
-                  />
-                </div>
-              </div>
-
-              {/* Submit */}
-              <button type="submit" className="btn-primary search-submit" id="btn-check">
-                Check if I Overpaid
-                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
-                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              )}
             </div>
+
+            <div className="input-divider"></div>
+
+            {/* To */}
+            <div className="input-group" ref={toRef}>
+              <div className="input-wrapper">
+                <svg className="input-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 12L6 16M6 16L10 12M6 16V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" transform="rotate(45 12 12)"/>
+                </svg>
+                <input
+                  type="text"
+                  className="search-input"
+                  id="input-to"
+                  placeholder="To (e.g. LON)"
+                  value={to}
+                  onChange={(e) => handleToChange(e.target.value)}
+                  onFocus={() => to && setShowToDropdown(true)}
+                  maxLength={3}
+                  autoComplete="off"
+                />
+              </div>
+              {showToDropdown && toSuggestions.length > 0 && (
+                <div className="airport-dropdown inline-dropdown" id="dropdown-to">
+                  {toSuggestions.map(a => (
+                    <button key={a.code} className="dropdown-item" type="button" onClick={() => selectTo(a)}>
+                      <span className="dropdown-code">{a.code}</span>
+                      <span className="dropdown-city">{a.city}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="input-divider"></div>
+
+            {/* Cabin Class */}
+            <div className="inline-cabin-pills">
+              {['economy', 'business', 'first'].map((c, idx) => (
+                <button
+                  key={c}
+                  type="button"
+                  className={`inline-pill ${cabin === c ? 'active' : ''}`}
+                  onClick={() => setCabin(c)}
+                >
+                  {c === 'economy' ? 'Econ' : c === 'business' ? 'Biz' : 'First'}
+                </button>
+              ))}
+            </div>
+
+            <div className="input-divider"></div>
+
+            {/* Points */}
+            <div className="input-group">
+              <div className="input-wrapper">
+                <input
+                  type="text"
+                  className="search-input points-inline"
+                  id="input-points"
+                  placeholder="Points (e.g. 60k)"
+                  value={points}
+                  onChange={(e) => handlePointsChange(e.target.value)}
+                  autoComplete="off"
+                />
+              </div>
+            </div>
+
+            {/* Submit */}
+            <button type="submit" className="btn-primary search-submit-inline" id="btn-check">
+              Check
+            </button>
           </div>
         </form>
 
-        <div className="hero-trust animate-fade-in-up delay-5">
+        <div className="hero-trust animate-fade-in-up delay-4">
           <div className="trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            25+ award programs
-          </div>
-          <div className="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Real-time data
-          </div>
-          <div className="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Free to check
+            Check real-time award values vs cash
           </div>
         </div>
+        
+        {/* Mockup visual to anchor the hero section */}
+        <div className="hero-mockup-visual animate-fade-in-up delay-5">
+           <div className="mockup-header">
+              <div className="dots"><span></span><span></span><span></span></div>
+              <div className="url-bar">flightpoints.com</div>
+           </div>
+           <div className="mockup-body">
+              <div className="mock-route">
+                 <div className="mock-city">
+                    <h2>LON</h2>
+                    <span>London Heathrow</span>
+                 </div>
+                 <div className="mock-plane">
+                    <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                       <path d="M21 16V14L13 9V3.5C13 2.67157 12.3284 2 11.5 2C10.6716 2 10 2.67157 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z" fill="currentColor"/>
+                    </svg>
+                 </div>
+                 <div className="mock-city">
+                    <h2>NYC</h2>
+                    <span>New York JFK</span>
+                 </div>
+              </div>
+              <div className="mock-card red">
+                 <div className="mock-card-left">
+                    <span className="dot"></span> 
+                    <strong>Standard Cost</strong>
+                 </div>
+                 <div className="mock-card-right">80k pts</div>
+              </div>
+              <div className="mock-card green">
+                 <div className="mock-card-left">
+                    <span className="dot"></span>
+                    <strong>Best Value Option</strong>
+                 </div>
+                 <div className="mock-card-right">45k pts</div>
+              </div>
+           </div>
+        </div>
+
       </div>
     </section>
   );

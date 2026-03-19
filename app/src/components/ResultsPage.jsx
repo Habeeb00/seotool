@@ -57,6 +57,34 @@ export default function ResultsPage() {
 
   return (
     <div className="results-page-wrapper">
+      {/* Route Header */}
+      {!isLoading && !notFound && result && (
+        <div className="results-route-header animate-fade-in-up">
+          <div className="results-route-inner">
+            <button className="btn-back" onClick={() => window.location.href = '/'}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span>New Search</span>
+            </button>
+            <div className="route-display">
+              <span className="route-airport">{from}</span>
+              <div className="route-divider">
+                <div className="route-line"></div>
+                <svg className="route-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 12h20M22 12l-4-4M22 12l-4 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div className="route-line"></div>
+              </div>
+              <span className="route-airport">{to}</span>
+            </div>
+            <div className="route-cabin-badge">
+              {cabin.charAt(0).toUpperCase() + cabin.slice(1)} Class
+            </div>
+          </div>
+        </div>
+      )}
+
       {isLoading && (
         <section className="loading-section" id="loading-section">
           <div className="loading-card animate-scale-in">

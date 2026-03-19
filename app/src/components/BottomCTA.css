@@ -1,0 +1,75 @@
+.ctab-section {
+  padding: var(--space-4xl) var(--space-lg);
+  display: flex;
+  justify-content: center;
+  background: var(--bg-page);
+  text-align: center;
+}
+
+.ctab-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.ctab-title {
+  font-size: var(--font-size-5xl);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.ctab-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.ctab-form {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.ctab-input {
+  background: var(--bg-input);
+  border: 1px solid var(--border-medium);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  min-width: 280px;
+  outline: none;
+  transition: var(--transition-base);
+}
+
+.ctab-input:focus {
+  border-color: var(--primary-500);
+  background: var(--bg-hover);
+}
+
+.ctab-input::placeholder {
+  color: var(--text-muted);
+}
+
+.ctab-btn {
+  padding: 12px 32px;
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 600px) {
+  .ctab-title {
+    font-size: var(--font-size-4xl);
+  }
+  .ctab-form {
+    flex-direction: column;
+  }
+  .ctab-input {
+    min-width: 100%;
+  }
+}

@@ -14,14 +14,13 @@ export default function Navbar() {
           <span className="navbar-logo-text">flightpoints</span>
         </a>
 
-
         <div className="navbar-actions">
-          <button className="btn-get-pro" id="btn-get-pro">
+          <a href="https://flightpoints.com/pricing" className="btn-get-pro" id="btn-get-pro" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" />
             </svg>
             Get Pro
-          </button>
+          </a>
           <div className="navbar-avatar" id="navbar-avatar">
             <span>U</span>
           </div>
