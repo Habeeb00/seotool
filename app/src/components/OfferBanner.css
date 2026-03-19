@@ -1,0 +1,88 @@
+.offer-banner {
+  background: var(--accent-orange);
+  color: white;
+  padding: 10px var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.offer-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.offer-text strong {
+  font-weight: 800;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.countdown-unit {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+  min-width: 32px;
+  text-align: center;
+}
+
+.countdown-sep {
+  font-weight: 700;
+  margin: 0 1px;
+}
+
+.offer-cta {
+  padding: 5px 16px;
+  background: white;
+  color: var(--accent-orange);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.offer-cta:hover {
+  background: #FFF7ED;
+  transform: scale(1.04);
+}
+
+.offer-close {
+  position: absolute;
+  right: var(--space-lg);
+  background: none;
+  border: none;
+  color: white;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: var(--transition-fast);
+  padding: 4px;
+}
+
+.offer-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (max-width: 640px) {
+  .offer-banner-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-xs);
+  }
+}
