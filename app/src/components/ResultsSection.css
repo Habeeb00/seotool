@@ -137,10 +137,7 @@
   overflow: hidden;
 }
 
-.verdict-excellent { border-color: var(--verdict-excellent); }
-.verdict-good { border-color: var(--verdict-good); }
-.verdict-warning { border-color: var(--verdict-warning); }
-.verdict-overpay { border-color: var(--verdict-overpay); }
+/* Removed colored borders per user request */
 
 .verdict-title {
   font-size: var(--font-size-3xl);
@@ -428,6 +425,8 @@
 }
 
 .alternative-card {
+  display: flex;
+  flex-direction: column;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -444,11 +443,14 @@
 }
 
 .alt-best {
-  border-color: var(--verdict-excellent);
+  /* Removed border-color to keep it clean */
   background: var(--bg-card);
 }
 
 .alt-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   position: relative;
   z-index: 1;
 }
@@ -507,6 +509,21 @@
   font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--verdict-excellent);
+  margin-bottom: 0;
+}
+
+.alt-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-md);
+}
+
+.alt-btn {
+  padding: 8px 20px;
+  font-size: var(--font-size-sm);
+  margin-left: var(--space-sm);
 }
 
 /* ========================================

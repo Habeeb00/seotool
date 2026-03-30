@@ -156,8 +156,18 @@ export default function ResultsSection({ result, alternatives, from, to, cabin }
                           <span className="alt-points-value">{formatPoints(alt.points)}</span>
                           <span className="alt-points-label">pts</span>
                         </div>
-                        <div className="alt-savings">
-                          Save {formatPoints(alt.savings)} pts
+                        <div className="alt-bottom-row">
+                          <div className="alt-savings">
+                            Save {formatPoints(alt.savings)} pts
+                          </div>
+                          <a 
+                            href={`https://flightpoints.com/search?from=${from}&to=${to}&cabin=${cabin}&sort=best_value`} 
+                            className="btn-primary alt-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Get
+                          </a>
                         </div>
                       </div>
                     </div>
