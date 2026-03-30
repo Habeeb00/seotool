@@ -1,8 +1,8 @@
 .footer {
   background: var(--bg-card);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   padding: var(--space-2xl) var(--space-lg);
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 .footer-inner {
@@ -39,18 +39,18 @@
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: var(--font-size-sm);
   transition: var(--transition-fast);
 }
 
 .footer-links a:hover {
-  color: white;
+  color: var(--primary-600);
 }
 
 .footer-copy {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-muted);
   max-width: 500px;
 }

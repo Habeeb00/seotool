@@ -4,7 +4,7 @@
 }
 
 .results-route-header {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   background: var(--bg-page);
   padding: var(--space-md) var(--space-lg);
   position: sticky;
@@ -130,8 +130,8 @@
   background: var(--bg-card);
   border-radius: var(--radius-xl);
   padding: var(--space-xl) var(--space-2xl) var(--space-xl);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -212,7 +212,7 @@
 .verdict-bar-track {
   position: relative;
   height: 8px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.1);
   border-radius: var(--radius-pill);
   overflow: visible;
 }
@@ -270,7 +270,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid var(--bg-card);
   box-shadow: var(--shadow-md);
 }
 
@@ -307,7 +307,7 @@
 .verdict-highlight {
   background: transparent;
   color: var(--text-primary);
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
   padding: var(--space-md);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
@@ -326,8 +326,8 @@
   background: var(--bg-card);
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .insights-header {
@@ -358,14 +358,14 @@
   align-items: flex-start;
   gap: var(--space-md);
   padding: var(--space-md);
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: var(--radius-md);
   transition: var(--transition-base);
 }
 
 .insight-item:hover {
-  background: rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.06);
   transform: translateX(4px);
 }
 

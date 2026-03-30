@@ -8,11 +8,11 @@
   --primary-600: #2563EB;
   --primary-700: #1D4ED8;
   --primary-gradient: linear-gradient(135deg, #3B82F6, #2563EB);
-  --primary-gradient-hero: linear-gradient(160deg, #111827 0%, #1e3a8a 50%, #111827 100%);
+  --primary-gradient-hero: linear-gradient(160deg, #f8fafc 0%, #dbeafe 50%, #f8fafc 100%);
 
   /* Accent */
   --accent-orange: #F97316;
-  --accent-orange-light: #2A1705;
+  --accent-orange-light: #fff7ed;
 
   /* Verdict Colors */
   --verdict-excellent: #10B981;
@@ -25,14 +25,14 @@
   --verdict-overpay-bg: rgba(239, 68, 68, 0.1);
 
   /* Neutrals */
-  --bg-page: #0a0a0a;
-  --bg-card: #171717;
-  --bg-input: #262626;
-  --border-light: rgba(255, 255, 255, 0.1);
-  --border-medium: rgba(255, 255, 255, 0.2);
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-input: #f1f5f9;
+  --border-light: rgba(0, 0, 0, 0.05);
+  --border-medium: rgba(0, 0, 0, 0.1);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
